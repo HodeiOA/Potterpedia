@@ -6,6 +6,29 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class HPController extends Controller
 {
+	public function listCasasAction()
+	{
+
+		$casas = $this->get('doctrine')->getManager()->getRepository('HPBundle:Casa')->getCasas();
+
+		return $this->render('HPBundle:Casa:listCasa.html.twig', array('casas' => $casas));
+	}
+
+	public function showCasaAction($id)
+	{
+		$casa = $this->get('doctrine')->getManager()->getRepository('HPBundle:Casa')->find($id);
+		
+		if (!$casa) 
+		{
+			throw $this->createNotFoundException('No se ha encontrado la casa.');
+		}
+
+		/*$personajes = $this->get('doctrine')->getManager()->getRepository('BlogBundle:Comment')->getCommentsForPost($post->getId());
+
+		return $this->render('BlogBundle:Blog:show.html.twig', array('post' => $post, 'comments' => $comments));
+		*/
+		return $this->render('HPBundle:Casa:showCasa.html.twig', array('casa' => $casa));
+	}
 
 	public function listPeliculasAction()
 	{

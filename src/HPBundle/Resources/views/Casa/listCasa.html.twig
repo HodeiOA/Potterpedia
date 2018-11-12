@@ -1,0 +1,17 @@
+{% extends "HPBundle::layout.html.twig" %}
+{% block title %}Lista de casas{% endblock %}
+
+{% block body %}
+
+    {% for casa in casas %}
+        <article class="casa">
+        	<div class="casaImage">
+	            <a href="{{ path('HP_show_casa', { 'id': casa.idCasa }) }}"><img src="{{ asset('imagesCasa/'~ casa.path) }}" alt="{{casa.nombre}}"></a>
+   			</div>
+   			<h2><a href="{{ path('HP_show_casa', { 'id': casa.idCasa }) }}">{{ casa.nombre }}</a></h2>
+        </article>
+    {% else %}
+        <p>No hay casas</p>
+    {% endfor %}
+
+{% endblock %}

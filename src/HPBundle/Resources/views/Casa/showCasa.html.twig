@@ -1,0 +1,32 @@
+{% extends "HPBundle::layout.html.twig" %}
+{% block title %}Detalles de la casa{% endblock %}
+
+{% block body %}
+	<h1>{{ casa.nombre }}</h1>
+	
+	<div id="casaData">
+		<div class="casaImageShow">
+            <img src="{{ asset('imagesCasa/'~ casa.path) }}" alt="{{casa.nombre}}">
+		</div>
+		<br>
+		</br>
+		<div class="casaTextShow">
+			<div class="descripcion"><b>Descripción:  </b>{{casa.descripcion}}</div>
+			<br>
+			</br>
+			<div class="animal"><b>Animal:  </b>{{casa.animal}}</div>
+			<br>
+			</br>
+			<div class="fantasma"><b>Fantasma:  </b>{{casa.fantasma}}</div>
+			<br>
+			</br>
+			<div class="creador"><b>Creador/a:  </b>{{casa.creador}}</div>
+			<br>
+			</br>
+		</div>
+	</div>
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}

@@ -1,3 +1,19 @@
-hp_homepage:
-    path:     /
-    defaults: { _controller: HPBundle:Default:index }
+HP_home:
+    path: /
+    defaults: { _controller: HPBundle:HP:home }
+
+HP_list_casas:
+    path: /casas
+    defaults: { _controller: HPBundle:HP:list_casas }
+
+HP_show_casa:
+    path: /showCasa/{id}
+    defaults: { _controller: HPBundle:HP:show_casa }
+
+HP_list_peliculas:
+    path: /peliculas
+    defaults: { _controller: HPBundle:HP:list_peliculas }
+
+HP_show_pelicula:
+    path: /showPelicula/{id}
+    defaults: { _controller: HPBundle:HP:show_pelicula }
