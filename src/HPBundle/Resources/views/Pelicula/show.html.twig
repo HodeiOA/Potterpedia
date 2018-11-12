@@ -1,0 +1,29 @@
+{# src/HPBundle/Resources/views/Pelicula/show.html.twig #}
+
+{% extends "HPBundle::layout.html.twig" %}
+
+{% block title %}Detalle de la pelicula{% endblock %}
+
+{% block body %}
+	<h1>{{ pelicula.titulo }}</h1>
+	<div class="año">
+		{{ pelicula.año }}
+	</div>
+	<div class="sinopsis">
+		{{ pelicula.sinopsis }}
+	</div>
+	<div class="director">
+		{{ pelicula.director }}
+	</div>
+
+	<section class="personajes" id="personajes">
+		<section class="personajes-en-la-pelicula">
+			<h3>Personajes</h3>
+			{% include 'HPBundle:Personaje:list.html.twig' with { 'personaje': personajes } %}
+		</section>
+{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link href="{{ asset('css/blog.css') }}" type="text/css" rel="stylesheet" />
+{% endblock %}

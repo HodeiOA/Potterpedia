@@ -1,0 +1,16 @@
+{# src/HpBundle/Resources/views/Pelicula/list.html.php #}
+{% $view->extend('::layout.html.twig') %}
+{% block title %}Lista de Peliculas{% endblock %}
+
+{% block body %}
+	<h1>Lista de Peliculas</h1>
+	<ul>
+		{% for pelicula in peliculas %}
+		<li>
+			<a href="{{ path('blogger_blog_show', {'id': pelicula.idPelicula}) }}">
+				{{pelicula.titulo}}
+			</a>
+		</li>
+		{% endfor %}
+	</ul>
+{% endblock %}

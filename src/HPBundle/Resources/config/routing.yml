@@ -1,0 +1,3 @@
+hp_homepage:
+    path:     /
+    defaults: { _controller: HPBundle:Default:index }
